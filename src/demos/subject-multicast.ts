@@ -1,6 +1,7 @@
 import { Observable } from "rxjs/Observable";
 import { Subject } from "rxjs/Subject";
-import { multicast } from "rxjs/operators";
+import { multicast, publish } from "rxjs/operators";
+import { ConnectableObservable } from "rxjs/observable/ConnectableObservable";
 
 /* create a new observable, providing the observer. */
 let i = 0;
@@ -32,6 +33,9 @@ multicasted.subscribe(value => console.log('Second subscription', value));
 
 /* Connect the subject to the observabe. */
 // I should be able to invoke `multicasted.connect();`,
+// const connectableObserable: ConnectableObservable<number> = multicasted.pipe(
+//   publish()
+// );
 const subscription = observable.subscribe(subject);
 
 /* Unsubscribe after 5 seconds. */
