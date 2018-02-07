@@ -1,7 +1,6 @@
 import { Observable } from "rxjs/Observable";
-import { interval } from "rxjs/observable/interval";
-import * as io from 'socket.io-client';
 import { Observer } from "rxjs/Observer";
+import * as io from 'socket.io-client';
 
 // Be sure to start socket.io server via `yarn start:server`
 

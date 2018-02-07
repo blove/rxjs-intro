@@ -22,9 +22,13 @@
 /* 8 - Subjects are muticast. */
 // import './demos/subject-multicast';
 
-/* 9 - Cold Observables. */
+/* 9 - Cold Observables - don't forget to start socket server. */
 // import './demos/observable-cold';
 
 /* 10 - Hot Observables. */
 // import './demos/observable-hot-1';
 // import './demos/observable-hot-2';
+
+/* 11 - */
+// import './demos/takewhile';
+// import './demos/takeuntil';

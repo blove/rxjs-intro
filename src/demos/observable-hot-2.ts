@@ -19,7 +19,7 @@ const messages = Observable.create((observer: Observer<any>) => {
   
   return () => {
     socket.disconnect();
-  };  
+  };
 })
 .pipe(share());
 

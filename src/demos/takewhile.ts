@@ -1,0 +1,20 @@
+import { Observable } from "rxjs/Observable";
+import { takeWhile } from "rxjs/operators";
+import "rxjs/add/observable/interval";
+
+/* create a new observable, providing the observer. */
+let i = 0;
+const observable = Observable.interval(1000);
+
+/* Store component state. */
+let alive = true;
+
+/* Subscribe to Notifications. */
+observable
+  .pipe(
+    takeWhile(() => alive)
+  )
+  .subscribe(value => console.log(value));
+
+/* Toggle component state. */
+setTimeout(() => alive = false, 6000);

@@ -23,7 +23,7 @@ s.subscribe(
 );
 
 /* Complete the observable stream. */
-// if we do not complete, so values are emited to subscriptions
+// we must complete so values are emited to subscriptions
 s.complete();
 
 /* TAKEAWAY */

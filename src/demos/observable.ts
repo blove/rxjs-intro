@@ -1,5 +1,4 @@
 import { Observable } from "rxjs/Observable";
-import { interval } from "rxjs/observable/interval";
 
 /* create a new observable, providing the observer. */
 const observable: Observable<string> = new Observable(observer => {

@@ -18,16 +18,16 @@ const messages = Observable.create((observer: Observer<any>) => {
   
   return () => {
     socket.disconnect();
-  };  
+  };
 });
 
 /* An Observable is cold until subscribed. */
-// messages.subscribe((message: any) => console.log(message));
+messages.subscribe((message: any) => console.log(message));
 
 /* Multiple subscriptions will create multiple socket connections */
-const subscription = messages.subscribe((message: any) => console.log('First subscription', message));
-subscription.add(messages.subscribe((message: any) => console.log('Second subscription', message)));
-setTimeout(() => subscription.unsubscribe(), 6000);
+// const subscription = messages.subscribe((message: any) => console.log('First subscription', message));
+// subscription.add(messages.subscribe((message: any) => console.log('Second subscription', message)));
+// setTimeout(() => subscription.unsubscribe(), 6000);
 
 /* TAKEAWAY */
 // Observables are cold and unicast by default
