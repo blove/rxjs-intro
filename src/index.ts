@@ -20,7 +20,7 @@
 // import './demos/observable-unicast';
 
 /* 8 - Subjects are muticast. */
-// import './demos/subject-multicast';
+import './demos/subject-multicast';
 
 /* 9 - Cold Observables - don't forget to start socket server. */
 // import './demos/observable-cold';
