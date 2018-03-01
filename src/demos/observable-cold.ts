@@ -5,12 +5,11 @@ import * as io from 'socket.io-client';
 // Be sure to start socket.io server via `yarn start:server`
 
 /* create a new observable, providing the observer. */
-let socket: SocketIOClient.Socket;
-const url = 'localhost:3000';
 const messages = Observable.create((observer: Observer<any>) => {
   console.log('%cNew subscription created', 'background: #222; color: #bada55');
 
-  socket = io(url);
+  const url = 'localhost:3000';
+  const socket: SocketIOClient.Socket = io(url);
   
   socket.on('message', (data: any) => {
     observer.next(data);

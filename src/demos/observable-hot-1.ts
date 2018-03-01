@@ -17,9 +17,9 @@ const messages = Observable.create((observer: Observer<any>) => {
 });
 
 /* Multiple subscriptions will open single connection. */
-const subscription = messages.subscribe((message: any) => console.log('First subscription', message));
-subscription.add(messages.subscribe((message: any) => console.log('Second subscription', message)));
-setTimeout(() => subscription.unsubscribe(), 6000);
+// const subscription = messages.subscribe((message: any) => console.log('First subscription', message));
+// subscription.add(messages.subscribe((message: any) => console.log('Second subscription', message)));
+// setTimeout(() => subscription.unsubscribe(), 6000);
 
 /* TAKEAWAY */
 // We can make an observable "warm" by moving

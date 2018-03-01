@@ -1,4 +1,3 @@
-import { interval } from 'rxjs/observable/interval';
 import { Observer } from 'rxjs/Observer';
 import { Observable } from "rxjs/Observable";
 import { Subject } from "rxjs/Subject";
@@ -37,7 +36,7 @@ multicasted.subscribe(value => console.log('First subscription', value));
 multicasted.subscribe(value => console.log('Second subscription', value));
 
 /* Connect the subject to the observabe. */
-const connection = multicasted.connect();
+multicasted.connect();
 
 /* Complete the observable after 5 seconds. */
 setTimeout(() => alive = false, 5000);

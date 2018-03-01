@@ -21,7 +21,9 @@ const messages = Observable.create((observer: Observer<any>) => {
     socket.disconnect();
   };
 })
-.pipe(share());
+.pipe(
+  share()
+);
 
 /* Multiple subscriptions will open single connection. */
 const subscription = messages.subscribe((message: any) => console.log('First subscription', message));

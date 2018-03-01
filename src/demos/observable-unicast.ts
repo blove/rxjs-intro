@@ -9,7 +9,7 @@ const observable: Observable<number> = new Observable(observer => {
   
   const interval = setInterval(() => {
     observer.next(i);
-  }, 2000);
+  }, 1000);
 
   return () => {
     clearInterval(interval);

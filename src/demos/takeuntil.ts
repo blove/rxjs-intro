@@ -3,7 +3,6 @@ import { filter, takeUntil } from "rxjs/operators";
 import "rxjs/add/observable/interval";
 
 /* create a new observable, providing the observer. */
-let i = 0;
 const observable = Observable.interval(1000);
 
 /* Unsubscribe when value is greater than 2 and even. */
