@@ -1,6 +1,7 @@
+import "rxjs/add/observable/interval";
+
 import { Observable } from "rxjs/Observable";
 import { filter, takeUntil } from "rxjs/operators";
-import "rxjs/add/observable/interval";
 
 /* create a new observable, providing the observer. */
 const observable = Observable.interval(1000);
@@ -11,8 +12,4 @@ let unsubscribe = observable.pipe(
 );
 
 /* Subscribe to Notifications. */
-observable
-  .pipe(
-    takeUntil(unsubscribe)
-  )
-  .subscribe(value => console.log(value));
+observable.pipe(takeUntil(unsubscribe)).subscribe(value => console.log(value));

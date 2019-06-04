@@ -5,9 +5,9 @@ const s = new BehaviorSubject<number>(0);
 
 /* Subscribe to subject. */
 s.subscribe(
-  next => console.log('before:', next),
+  next => console.log("before:", next),
   error => console.warn(error),
-  () => console.log('complete before')
+  () => console.log("complete before")
 );
 
 /* Emit some values. */
@@ -18,13 +18,13 @@ s.next(3);
 
 /* Subscribe late to subject. */
 s.subscribe(
-  next => console.log('after:', next),
+  next => console.log("after:", next),
   error => console.warn(error),
-  () => console.log('complete after')
+  () => console.log("complete after")
 );
 
 /* TAKEAWAY */
-// When an observer subscribes to a BehaviorSubject, 
+// When an observer subscribes to a BehaviorSubject,
 // it begins by emitting the item most recently emitted by the source Observable
-// (or a seed/default value if none has yet been emitted) 
+// (or a seed/default value if none has yet been emitted)
 // and then continues to emit any other items emitted later by the source Observable(s).

@@ -2,15 +2,14 @@ import { Observable } from "rxjs/Observable";
 
 /* create a new observable, providing the observer. */
 const observable: Observable<string> = new Observable(observer => {
-
   const interval = setInterval(() => {
-    observer.next('Hello from Observableland!');
+    observer.next("Hello from Observableland!");
   }, 2000);
 
   // teardown
   return () => {
     clearInterval(interval);
-  }
+  };
 });
 
 /* Subscribe to Notifications. */

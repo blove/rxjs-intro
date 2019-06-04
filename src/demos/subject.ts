@@ -5,14 +5,14 @@ const s = new Subject<number>();
 
 /* Subscribe to subject. */
 s.subscribe(
-  next => console.log('before 1:', next),
+  next => console.log("before 1:", next),
   error => console.warn(error),
-  () => console.log('complete before 1')
+  () => console.log("complete before 1")
 );
 s.subscribe(
-  next => console.log('before 2:', next),
+  next => console.log("before 2:", next),
   error => console.warn(error),
-  () => console.log('complete before 2')
+  () => console.log("complete before 2")
 );
 
 /* Emit some values. */
@@ -22,9 +22,9 @@ s.next(3);
 
 /* Subscribe late to subject. */
 s.subscribe(
-  next => console.log('after:', next),
+  next => console.log("after:", next),
   error => console.warn(error),
-  () => console.log('complete after')
+  () => console.log("complete after")
 );
 
 /* Late subscription will now receive Notification. */
